@@ -23,11 +23,14 @@ module.exports = {
     rules: [
       //详细的loader的配置
       {
-        //匹配那些文件
+        //匹配那些文件（这里是匹配.css结尾的样式资源）
         test: /\.css$/,
         //使用那些loader来处理
         use: [
+          //use数组中的loader执行的顺序是从右到左边 从下到上 依次执行
+          //创建style标签，将js 中的样式资源插入进行，添加到header中生效
           'style-loader',
+          //将css文件变成commonjs模块加载js中，里面的内容是样式字符串
           'css-loader'
         ]
       }
