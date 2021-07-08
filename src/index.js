@@ -7,6 +7,10 @@
  * 1.2生产环境(webpack4)：webpack ./src/index.js -o ./build/build.js --mode=production
  * 
  * **/
+import dataJson from "./data.json"
+
+console.log(dataJson);
+
 function add(x, y) {
   return x + y;
 }
